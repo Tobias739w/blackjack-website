@@ -1,0 +1,28 @@
+body{
+font-family: Arial;
+background: #0b6623;
+color: white;
+text-align: center;
+}
+
+.game{
+margin-top:50px;
+}
+
+.cards{
+margin:20px;
+}
+
+button{
+padding:10px 20px;
+margin:10px;
+font-size:16px;
+cursor:pointer;
+border:none;
+border-radius:5px;
+}
+
+button:hover{
+background:#ddd;
+color:black;
+}
