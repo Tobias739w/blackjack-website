@@ -220,6 +220,7 @@ document.getElementById("dealerCards").innerHTML=""
 document.getElementById("result").textContent=""
 
 bet=0
+
 updateMoney()
 
 }
