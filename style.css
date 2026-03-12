@@ -1,38 +1,55 @@
 body{
-background:#0b6623;
-color:white;
 font-family:Arial;
+color:white;
 text-align:center;
+
+/* Blackjack Tisch Hintergrund */
+
+background-image:url("https://www.nicepng.com/png/detail/422-4223667_blackjack-table-baccarat-table.png");
+background-size:cover;
+background-position:center;
+}
+
+.hud{
+font-size:22px;
+margin:20px;
 }
 
 .table{
-display:flex;
-justify-content:center;
-gap:120px;
 margin-top:40px;
+}
+
+.area{
+margin:20px;
 }
 
 .cards{
 display:flex;
-gap:10px;
 justify-content:center;
-margin:10px;
+gap:12px;
+margin:20px;
 }
+
+/* Karten Animation */
 
 .cards img{
 width:90px;
-animation:deal 0.5s ease;
+
+animation:deal 0.4s ease;
 }
 
 @keyframes deal{
-from{
-transform:translateY(-60px);
+
+0%{
+transform:translateY(-80px) rotate(-10deg);
 opacity:0;
 }
-to{
-transform:translateY(0);
+
+100%{
+transform:translateY(0) rotate(0);
 opacity:1;
 }
+
 }
 
 button{
@@ -50,5 +67,5 @@ color:black;
 }
 
 .chips button{
-font-size:20px;
+font-size:18px;
 }
