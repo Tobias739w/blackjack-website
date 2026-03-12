@@ -1,28 +1,39 @@
 body{
-font-family: Arial;
-background: #0b6623;
-color: white;
-text-align: center;
+background:#0b6623;
+color:white;
+font-family:Arial;
+text-align:center;
 }
 
-.game{
-margin-top:50px;
+.table{
+display:flex;
+justify-content:center;
+gap:100px;
+margin-top:40px;
 }
 
 .cards{
-margin:20px;
+display:flex;
+gap:10px;
+justify-content:center;
+margin:10px;
+}
+
+.cards img{
+width:80px;
 }
 
 button{
 padding:10px 20px;
 margin:10px;
 font-size:16px;
-cursor:pointer;
 border:none;
-border-radius:5px;
+border-radius:6px;
+cursor:pointer;
 }
 
 button:hover{
 background:#ddd;
 color:black;
 }
+
