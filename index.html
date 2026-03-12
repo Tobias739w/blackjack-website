@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Blackjack Casino</title>
+<title>3D Blackjack Casino</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<h1>🃏 Blackjack Casino</h1>
+<h1>🃏 3D Blackjack Casino</h1>
 
 <div class="hud">
 💰 Konto: <span id="money">1000</span>$
@@ -20,18 +20,18 @@
 <button onclick="addBet(10)">🟡 10</button>
 <button onclick="addBet(50)">🔵 50</button>
 <button onclick="addBet(100)">🔴 100</button>
-<button onclick="clearBet()">Reset</button>
+<button onclick="clearBet()">Reset Bet</button>
 </div>
 
-<div class="table">
+<div class="table3d">
 
-<div class="area">
+<div class="dealer">
 <h2>Dealer</h2>
 <div id="dealerCards" class="cards"></div>
 <p id="dealerSum"></p>
 </div>
 
-<div class="area">
+<div class="player">
 <h2>Spieler</h2>
 <div id="playerCards" class="cards"></div>
 <p id="playerSum"></p>
@@ -41,11 +41,12 @@
 
 <h2 id="result"></h2>
 
-<div class="buttons">
+<div class="controls">
 <button onclick="startGame()">Deal</button>
 <button onclick="hit()">Hit</button>
 <button onclick="stand()">Stand</button>
 <button onclick="newRound()">Neue Runde</button>
+<button onclick="restartGame()">Spiel Neustarten</button>
 </div>
 
 <script src="script.js"></script>
