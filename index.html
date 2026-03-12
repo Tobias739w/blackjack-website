@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
 <meta charset="UTF-8">
 <title>Blackjack Casino</title>
@@ -11,8 +10,17 @@
 
 <h1>🃏 Blackjack Casino</h1>
 
-<h2>💰 Geld: <span id="money">1000</span>$</h2>
-<h3>🎲 Einsatz: <span id="bet">100</span>$</h3>
+<h2>💰 Konto: <span id="money">1000</span>$</h2>
+<h3>🎲 Einsatz: <span id="bet">0</span>$</h3>
+
+<div class="chips">
+
+<button onclick="addBet(10)">🟡 10</button>
+<button onclick="addBet(50)">🔵 50</button>
+<button onclick="addBet(100)">🔴 100</button>
+<button onclick="clearBet()">Reset</button>
+
+</div>
 
 <div class="table">
 
@@ -33,7 +41,7 @@
 <h2 id="result"></h2>
 
 <div class="buttons">
-<button onclick="startGame()">Start</button>
+<button onclick="startGame()">Deal</button>
 <button onclick="hit()">Hit</button>
 <button onclick="stand()">Stand</button>
 <button onclick="newRound()">Neue Runde</button>
