@@ -10,8 +10,11 @@
 
 <h1>🃏 Blackjack Casino</h1>
 
-<h2>💰 Konto: <span id="money">1000</span>$</h2>
-<h3>🎲 Einsatz: <span id="bet">0</span>$</h3>
+<div class="hud">
+💰 Konto: <span id="money">1000</span>$
+<br>
+🎲 Einsatz: <span id="bet">0</span>$
+</div>
 
 <div class="chips">
 <button onclick="addBet(10)">🟡 10</button>
@@ -22,13 +25,13 @@
 
 <div class="table">
 
-<div>
+<div class="area">
 <h2>Dealer</h2>
 <div id="dealerCards" class="cards"></div>
 <p id="dealerSum"></p>
 </div>
 
-<div>
+<div class="area">
 <h2>Spieler</h2>
 <div id="playerCards" class="cards"></div>
 <p id="playerSum"></p>
@@ -38,10 +41,12 @@
 
 <h2 id="result"></h2>
 
+<div class="buttons">
 <button onclick="startGame()">Deal</button>
 <button onclick="hit()">Hit</button>
 <button onclick="stand()">Stand</button>
 <button onclick="newRound()">Neue Runde</button>
+</div>
 
 <script src="script.js"></script>
 
