@@ -1,47 +1,72 @@
 body{
+background:radial-gradient(circle,#0b6623,#063b13);
 font-family:Arial;
 color:white;
 text-align:center;
-
-/* Blackjack Tisch Hintergrund */
-
-background-image:url("https://www.nicepng.com/png/detail/422-4223667_blackjack-table-baccarat-table.png");
-background-size:cover;
-background-position:center;
+margin:0;
 }
+
+/* HUD */
 
 .hud{
 font-size:22px;
 margin:20px;
 }
 
-.table{
-margin-top:40px;
+/* 3D Tisch */
+
+.table3d{
+
+width:700px;
+height:400px;
+
+margin:40px auto;
+
+background:linear-gradient(#0f8f3f,#0b6623);
+
+border-radius:350px;
+
+box-shadow:
+0 0 40px rgba(0,0,0,0.7) inset,
+0 20px 40px rgba(0,0,0,0.8);
+
+padding-top:40px;
+
 }
 
-.area{
-margin:20px;
+/* Dealer / Player Bereiche */
+
+.dealer{
+margin-bottom:40px;
+}
+
+.player{
+margin-top:40px;
 }
 
 .cards{
 display:flex;
 justify-content:center;
 gap:12px;
-margin:20px;
+margin:15px;
+}
+
+/* Karten */
+
+.cards img{
+
+width:90px;
+
+animation:deal 0.5s ease;
+
 }
 
 /* Karten Animation */
 
-.cards img{
-width:90px;
-
-animation:deal 0.4s ease;
-}
-
 @keyframes deal{
 
 0%{
-transform:translateY(-80px) rotate(-10deg);
+transform:translateY(-80px) rotate(-15deg);
 opacity:0;
 }
 
@@ -52,13 +77,19 @@ opacity:1;
 
 }
 
-button{
+/* Chips */
+
+.chips button{
+
 padding:10px 20px;
-margin:10px;
-font-size:16px;
+margin:8px;
+
+font-size:18px;
+
 border:none;
 border-radius:6px;
 cursor:pointer;
+
 }
 
 button:hover{
@@ -66,6 +97,17 @@ background:white;
 color:black;
 }
 
-.chips button{
-font-size:18px;
+/* Controls */
+
+.controls button{
+
+padding:10px 20px;
+margin:10px;
+
+font-size:16px;
+
+border:none;
+border-radius:6px;
+cursor:pointer;
+
 }
