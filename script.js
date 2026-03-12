@@ -2,8 +2,17 @@ let deck=[]
 let player=[]
 let dealer=[]
 
-let money=1000
+let money = localStorage.getItem("blackjackMoney") 
+? parseInt(localStorage.getItem("blackjackMoney")) 
+: 1000
+
 let bet=0
+
+function saveMoney(){
+
+localStorage.setItem("blackjackMoney",money)
+
+}
 
 function createDeck(){
 
@@ -138,6 +147,8 @@ document.getElementById("result").textContent="🎉 Du gewinnst!"
 
 money+=bet
 
+saveMoney()
+
 updateMoney()
 
 }
@@ -147,6 +158,8 @@ function lose(){
 document.getElementById("result").textContent="💀 Du verlierst!"
 
 money-=bet
+
+saveMoney()
 
 updateMoney()
 
@@ -210,6 +223,8 @@ document.getElementById("bet").textContent=bet
 
 }
 
+/* neue Runde */
+
 function newRound(){
 
 player=[]
@@ -220,6 +235,22 @@ document.getElementById("dealerCards").innerHTML=""
 document.getElementById("result").textContent=""
 
 bet=0
+
+updateMoney()
+
+}
+
+/* Spiel komplett reset */
+
+function restartGame(){
+
+money=1000
+
+saveMoney()
+
+bet=0
+
+newRound()
 
 updateMoney()
 
