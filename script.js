@@ -8,7 +8,7 @@ let bet=0
 function createDeck(){
 
 let suits=["H","D","C","S"]
-let values=["A","2","3","4","5","6","7","8","9","10","J","Q","K"]
+let values=["A","2","3","4","5","6","7","8","9","0","J","Q","K"]
 
 deck=[]
 
@@ -25,10 +25,16 @@ suit:suit
 
 }
 
-function getCardValue(card){
+function cardImage(card){
+
+return `https://deckofcardsapi.com/static/img/${card.value}${card.suit}.png`
+
+}
+
+function getValue(card){
 
 if(card.value==="A") return 11
-if(["K","Q","J"].includes(card.value)) return 10
+if(["K","Q","J","0"].includes(card.value)) return 10
 
 return parseInt(card.value)
 
@@ -42,17 +48,13 @@ return deck.splice(random,1)[0]
 
 }
 
-function cardImage(card){
-
-return `https://deckofcardsapi.com/static/img/${card.value}${card.suit}.png`
-
-}
-
 function addBet(amount){
 
 if(money>=amount){
+
 bet+=amount
 updateMoney()
+
 }
 
 }
@@ -67,8 +69,11 @@ updateMoney()
 function startGame(){
 
 if(bet===0){
-alert("Setze Chips!")
+
+alert("Setze zuerst Chips!")
+
 return
+
 }
 
 createDeck()
@@ -85,7 +90,9 @@ function hit(){
 player.push(drawCard())
 
 if(getSum(player)>21){
+
 lose()
+
 }
 
 updateUI()
@@ -95,20 +102,30 @@ updateUI()
 function stand(){
 
 while(getSum(dealer)<17){
+
 dealer.push(drawCard())
+
 }
 
 let playerSum=getSum(player)
 let dealerSum=getSum(dealer)
 
 if(dealerSum>21 || playerSum>dealerSum){
+
 win()
+
 }
+
 else if(playerSum===dealerSum){
+
 draw()
+
 }
+
 else{
+
 lose()
+
 }
 
 updateUI()
@@ -146,7 +163,9 @@ function getSum(cards){
 let sum=0
 
 for(let card of cards){
-sum+=getCardValue(card)
+
+sum+=getValue(card)
+
 }
 
 return sum
