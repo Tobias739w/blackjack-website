@@ -3,7 +3,7 @@ let player=[]
 let dealer=[]
 
 let money=1000
-let bet=100
+let bet=0
 
 function createDeck(){
 
@@ -48,7 +48,28 @@ return `https://deckofcardsapi.com/static/img/${card.value}${card.suit}.png`
 
 }
 
+function addBet(amount){
+
+if(money>=amount){
+bet+=amount
+updateMoney()
+}
+
+}
+
+function clearBet(){
+
+bet=0
+updateMoney()
+
+}
+
 function startGame(){
+
+if(bet===0){
+alert("Setze Chips!")
+return
+}
 
 createDeck()
 
@@ -64,7 +85,7 @@ function hit(){
 player.push(drawCard())
 
 if(getSum(player)>21){
-endGame("Du hast verloren")
+lose()
 }
 
 updateUI()
@@ -81,25 +102,42 @@ let playerSum=getSum(player)
 let dealerSum=getSum(dealer)
 
 if(dealerSum>21 || playerSum>dealerSum){
-endGame("Du gewinnst")
-money+=bet
+win()
 }
 else if(playerSum===dealerSum){
-endGame("Unentschieden")
+draw()
 }
 else{
-endGame("Dealer gewinnt")
-money-=bet
+lose()
 }
 
 updateUI()
 
 }
 
-function endGame(text){
+function win(){
 
-document.getElementById("result").textContent=text
-document.getElementById("money").textContent=money
+document.getElementById("result").textContent="🎉 Du gewinnst!"
+
+money+=bet
+
+updateMoney()
+
+}
+
+function lose(){
+
+document.getElementById("result").textContent="💀 Du verlierst!"
+
+money-=bet
+
+updateMoney()
+
+}
+
+function draw(){
+
+document.getElementById("result").textContent="🤝 Unentschieden"
 
 }
 
@@ -146,6 +184,13 @@ document.getElementById("dealerSum").textContent="Summe: "+getSum(dealer)
 
 }
 
+function updateMoney(){
+
+document.getElementById("money").textContent=money
+document.getElementById("bet").textContent=bet
+
+}
+
 function newRound(){
 
 player=[]
@@ -154,5 +199,8 @@ dealer=[]
 document.getElementById("playerCards").innerHTML=""
 document.getElementById("dealerCards").innerHTML=""
 document.getElementById("result").textContent=""
+
+bet=0
+updateMoney()
 
 }
