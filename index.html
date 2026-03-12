@@ -3,34 +3,40 @@
 
 <head>
 <meta charset="UTF-8">
-<title>Blackjack</title>
+<title>Blackjack Casino</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<h1>Blackjack</h1>
+<h1>🃏 Blackjack Casino</h1>
 
-<div class="game">
+<h2>💰 Geld: <span id="money">1000</span>$</h2>
+<h3>🎲 Einsatz: <span id="bet">100</span>$</h3>
 
-<div class="cards">
+<div class="table">
+
+<div>
 <h2>Dealer</h2>
-<p id="dealerCards"></p>
+<div id="dealerCards" class="cards"></div>
 <p id="dealerSum"></p>
 </div>
 
-<div class="cards">
+<div>
 <h2>Spieler</h2>
-<p id="playerCards"></p>
+<div id="playerCards" class="cards"></div>
 <p id="playerSum"></p>
 </div>
 
-<p id="result"></p>
+</div>
 
+<h2 id="result"></h2>
+
+<div class="buttons">
 <button onclick="startGame()">Start</button>
-<button onclick="hit()">Karte ziehen</button>
+<button onclick="hit()">Hit</button>
 <button onclick="stand()">Stand</button>
-
+<button onclick="newRound()">Neue Runde</button>
 </div>
 
 <script src="script.js"></script>
